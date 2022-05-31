@@ -14,6 +14,8 @@
 		74D8217F283CF070006070C4 /* Nutriboom.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74D8217D283CF070006070C4 /* Nutriboom.xcdatamodeld */; };
 		74D82181283CF081006070C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D82180283CF081006070C4 /* Assets.xcassets */; };
 		74D82184283CF081006070C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D82182283CF081006070C4 /* LaunchScreen.storyboard */; };
+		9BD15E0228460C7900A93D41 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD15E0028460C7900A93D41 /* MyTableViewCell.swift */; };
+		9BD15E0328460C7900A93D41 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BD15E0128460C7900A93D41 /* MyTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		74D82180283CF081006070C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74D82183283CF081006070C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74D82185283CF081006070C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BD15E0028460C7900A93D41 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		9BD15E0128460C7900A93D41 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				74D82182283CF081006070C4 /* LaunchScreen.storyboard */,
 				74D82185283CF081006070C4 /* Info.plist */,
 				74D8217D283CF070006070C4 /* Nutriboom.xcdatamodeld */,
+				9BD15E0028460C7900A93D41 /* MyTableViewCell.swift */,
+				9BD15E0128460C7900A93D41 /* MyTableViewCell.xib */,
 			);
 			path = Nutriboom;
 			sourceTree = "<group>";
@@ -129,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74D82184283CF081006070C4 /* LaunchScreen.storyboard in Resources */,
+				9BD15E0328460C7900A93D41 /* MyTableViewCell.xib in Resources */,
 				74D82181283CF081006070C4 /* Assets.xcassets in Resources */,
 				74D8217C283CF070006070C4 /* Main.storyboard in Resources */,
 			);
@@ -144,6 +151,7 @@
 				74D82179283CF070006070C4 /* ViewController.swift in Sources */,
 				74D8217F283CF070006070C4 /* Nutriboom.xcdatamodeld in Sources */,
 				74D82175283CF070006070C4 /* AppDelegate.swift in Sources */,
+				9BD15E0228460C7900A93D41 /* MyTableViewCell.swift in Sources */,
 				74D82177283CF070006070C4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
