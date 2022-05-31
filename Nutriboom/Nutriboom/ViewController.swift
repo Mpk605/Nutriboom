@@ -7,30 +7,26 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
-    var pictures = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fm = FileManager.default
-        let path = Bundle.main.resourcePath!
-        let items = try! fm.contentsOfDirectory(atPath: path)
-
-        for item in items {
-            if item.hasPrefix("nssl") {
-                // this is a picture to load!
-            }
-        }
+        
+       let s1 = Scan(id: 1, nom: "Banane", score: "A")
+       let s2 = Scan(id: 2, nom: "Pomme", score: "B")
     }
-    
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
-        cell.textLabel?.text = pictures[indexPath.row]
-        return cell
-    }
-    
     @IBOutlet weak var tableView: UITableView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+
+       super.viewWillAppear(animated)
+
+       tableView.reloadData()
+
+    }
+    
     
 
 

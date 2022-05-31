@@ -7,19 +7,15 @@
 
 import Foundation
 
-class Scan {
-    public var id : Int
-    public var nom : String
-    public var score : Character
-    public var image : 
+struct Scan {
+     var id : Int
+     var nom : String
+     var score : String
     
-    init (id : Int, nom : String, score : Character, image : Image){
+    init(id: Int, nom: String, score: String){
         self.id = id
         self.nom = nom
-        self.score  = score
-        self.image = image
+        self.score = score
     }
     
 }
-
-
