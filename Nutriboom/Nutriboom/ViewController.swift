@@ -7,15 +7,128 @@
 
 import UIKit
 import Foundation
+import AVFoundation
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var barcode: UITextField!
     @IBOutlet weak var productNameLabel: UILabel!
+    @IBOutlet weak var brandNameLabel: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    var captureSession: AVCaptureSession!
+    var previewLayer: AVCaptureVideoPreviewLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         barcode.delegate = self
+    }
+    
+    func launchScan() {
+        captureSession = AVCaptureSession()
+
+        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
+        let videoInput: AVCaptureDeviceInput
+
+        do {
+            videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
+        } catch {
+            return
+        }
+
+        if (captureSession.canAddInput(videoInput)) {
+            captureSession.addInput(videoInput)
+        } else {
+            failed()
+            return
+        }
+
+        let metadataOutput = AVCaptureMetadataOutput()
+
+        if (captureSession.canAddOutput(metadataOutput)) {
+            captureSession.addOutput(metadataOutput)
+
+            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            metadataOutput.metadataObjectTypes = [.ean8, .ean13, .pdf417]
+        } else {
+            failed()
+            return
+        }
+
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.frame = view.layer.bounds
+        previewLayer.videoGravity = .resizeAspectFill
+        view.layer.addSublayer(previewLayer)
+
+        captureSession.startRunning()
+    }
+    
+    func failed() {
+        let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+        captureSession = nil
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if (captureSession?.isRunning == false) {
+            captureSession.startRunning()
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if (captureSession?.isRunning == true) {
+            captureSession.stopRunning()
+        }
+    }
+
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        // captureSession.stopRunning()
+
+        if let metadataObject = metadataObjects.first {
+            guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
+            guard let stringValue = readableObject.stringValue else { return }
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            found(code: stringValue)
+        }
+
+        dismiss(animated: true)
+    }
+
+    func found(code: String) {
+        captureSession.stopRunning()
+        self.view.layer.sublayers = self.view.layer.sublayers?.filter { theLayer in
+            !theLayer.isKind(of: AVCaptureVideoPreviewLayer.classForCoder())
+            }
+        
+        let url = URL(string: "https://world.openfoodfacts.org/api/v0/product/" + code + ".json")!
+        
+        let task = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+            print(error)
+            
+            let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
+            
+            DispatchQueue.main.async {
+                self.productNameLabel.text = (json!["product"] as? [String: Any])!["product_name_fr"] as! String + " que pour les adultes"
+                self.brandNameLabel.text = (json!["product"] as? [String: Any])!["brands"] as! String + " que pour les adultes"
+                self.quantityLabel.text = (json!["product"] as? [String: Any])!["quantity"] as! String + " que pour les adultes"
+//                self.scoreLabel.text = (json!["product"] as? [String: Any])!["nutriscore_grade"] as! String + " que pour les adultes"
+            }
+        }
+        task.resume()
+    }
+
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -29,16 +142,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func fetchProduct(_ sender: Any) {
-        let url = URL(string: "https://world.openfoodfacts.org/api/v0/product/" + (barcode.text ?? "0737628064502") + ".json")!
-        
-        let task = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) -> Void in
-            let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
-            
-            DispatchQueue.main.async {
-                self.productNameLabel.text = (json!["product"] as? [String: Any])!["generic_name"] as! String
-            }
-        }
-        task.resume()
+        launchScan()
     }
 }
 
