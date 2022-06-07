@@ -10,7 +10,6 @@ import Foundation
 import AVFoundation
 
 class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOutputObjectsDelegate {
-    @IBOutlet weak var barcode: UITextField!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var brandNameLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
@@ -21,8 +20,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        barcode.delegate = self
     }
     
     func launchScan() {
@@ -110,13 +107,15 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
         
         let task = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) -> Void in
 
-            let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
-            
-            DispatchQueue.main.async {
-                self.productNameLabel.text = (json!["product"] as? [String: Any])!["product_name_fr"] as! String
-                self.brandNameLabel.text = (json!["product"] as? [String: Any])!["brands"] as! String
-                self.quantityLabel.text = (json!["product"] as? [String: Any])!["quantity"] as! String
-//                self.scoreLabel.text = (json!["product"] as? [String: Any])!["nutriscore_grade"] as! String
+            if (data != nil) {
+                let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
+                
+                DispatchQueue.main.async {
+                    self.productNameLabel.text = (json!["product"] as? [String: Any])!["product_name_fr"] as? String
+                    self.brandNameLabel.text = (json!["product"] as? [String: Any])!["brands"] as? String
+                    self.quantityLabel.text = (json!["product"] as? [String: Any])!["quantity"] as? String
+                    self.scoreLabel.text = (json!["product"] as? [String: Any])!["nutriscore_grade"] as? String
+                }
             }
         }
         task.resume()
@@ -131,7 +130,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //Check if there is any other text-field in the view whose tag is +1 greater than the current text-field on which the return key was pressed. If yes → then move the cursor to that next text-field. If No → Dismiss the keyboard
         if let nextField = self.view.viewWithTag(textField.tag + 1) as? UITextField {
             nextField.becomeFirstResponder()
         } else {
@@ -144,4 +142,3 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
         launchScan()
     }
 }
-
