@@ -109,15 +109,14 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
         let url = URL(string: "https://world.openfoodfacts.org/api/v0/product/" + code + ".json")!
         
         let task = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) -> Void in
-            print(error)
-            
+
             let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
             
             DispatchQueue.main.async {
-                self.productNameLabel.text = (json!["product"] as? [String: Any])!["product_name_fr"] as! String + " que pour les adultes"
-                self.brandNameLabel.text = (json!["product"] as? [String: Any])!["brands"] as! String + " que pour les adultes"
-                self.quantityLabel.text = (json!["product"] as? [String: Any])!["quantity"] as! String + " que pour les adultes"
-//                self.scoreLabel.text = (json!["product"] as? [String: Any])!["nutriscore_grade"] as! String + " que pour les adultes"
+                self.productNameLabel.text = (json!["product"] as? [String: Any])!["product_name_fr"] as! String
+                self.brandNameLabel.text = (json!["product"] as? [String: Any])!["brands"] as! String
+                self.quantityLabel.text = (json!["product"] as? [String: Any])!["quantity"] as! String
+//                self.scoreLabel.text = (json!["product"] as? [String: Any])!["nutriscore_grade"] as! String
             }
         }
         task.resume()
