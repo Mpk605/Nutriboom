@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
     @IBOutlet weak var brandNameLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var image: UIImageView!
     
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
@@ -115,6 +116,10 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
                     self.brandNameLabel.text = (json!["product"] as? [String: Any])!["brands"] as? String
                     self.quantityLabel.text = (json!["product"] as? [String: Any])!["quantity"] as? String
                     self.scoreLabel.text = (json!["product"] as? [String: Any])!["nutriscore_grade"] as? String
+                    
+                    let url = URL(string: (json!["image_url"] as? String ?? "https://images.openfoodfacts.org/images/products/376/009/431/0931/front_fr.20.400.jpg"))
+                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                    self.image.image = UIImage(data: data!)
                 }
             }
         }
