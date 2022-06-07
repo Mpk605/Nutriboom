@@ -14,6 +14,11 @@
 		74D8217F283CF070006070C4 /* Nutriboom.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74D8217D283CF070006070C4 /* Nutriboom.xcdatamodeld */; };
 		74D82181283CF081006070C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D82180283CF081006070C4 /* Assets.xcassets */; };
 		74D82184283CF081006070C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D82182283CF081006070C4 /* LaunchScreen.storyboard */; };
+		74DB3F37284F425F00959185 /* Nutri-score-A.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DB3F32284F425F00959185 /* Nutri-score-A.svg.png */; };
+		74DB3F38284F425F00959185 /* Nutri-score-C.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DB3F33284F425F00959185 /* Nutri-score-C.svg.png */; };
+		74DB3F39284F425F00959185 /* Nutri-score-D.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DB3F34284F425F00959185 /* Nutri-score-D.svg.png */; };
+		74DB3F3A284F425F00959185 /* Nutri-score-E.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DB3F35284F425F00959185 /* Nutri-score-E.svg.png */; };
+		74DB3F3B284F425F00959185 /* Nutri-score-B.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DB3F36284F425F00959185 /* Nutri-score-B.svg.png */; };
 		AD3E04D9283CFA870054D0D2 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E04D8283CFA870054D0D2 /* APIHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +32,11 @@
 		74D82180283CF081006070C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74D82183283CF081006070C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74D82185283CF081006070C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74DB3F32284F425F00959185 /* Nutri-score-A.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-A.svg.png"; path = "../../../Downloads/Nutri-score-A.svg.png"; sourceTree = "<group>"; };
+		74DB3F33284F425F00959185 /* Nutri-score-C.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-C.svg.png"; path = "../../../Downloads/Nutri-score-C.svg.png"; sourceTree = "<group>"; };
+		74DB3F34284F425F00959185 /* Nutri-score-D.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-D.svg.png"; path = "../../../Downloads/Nutri-score-D.svg.png"; sourceTree = "<group>"; };
+		74DB3F35284F425F00959185 /* Nutri-score-E.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-E.svg.png"; path = "../../../Downloads/Nutri-score-E.svg.png"; sourceTree = "<group>"; };
+		74DB3F36284F425F00959185 /* Nutri-score-B.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-B.svg.png"; path = "../../../Downloads/Nutri-score-B.svg.png"; sourceTree = "<group>"; };
 		AD3E04D8283CFA870054D0D2 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,6 +54,11 @@
 		74D82168283CF070006070C4 = {
 			isa = PBXGroup;
 			children = (
+				74DB3F32284F425F00959185 /* Nutri-score-A.svg.png */,
+				74DB3F36284F425F00959185 /* Nutri-score-B.svg.png */,
+				74DB3F33284F425F00959185 /* Nutri-score-C.svg.png */,
+				74DB3F34284F425F00959185 /* Nutri-score-D.svg.png */,
+				74DB3F35284F425F00959185 /* Nutri-score-E.svg.png */,
 				74D82173283CF070006070C4 /* Nutriboom */,
 				74D82172283CF070006070C4 /* Products */,
 			);
@@ -131,9 +146,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74DB3F3B284F425F00959185 /* Nutri-score-B.svg.png in Resources */,
+				74DB3F3A284F425F00959185 /* Nutri-score-E.svg.png in Resources */,
+				74DB3F38284F425F00959185 /* Nutri-score-C.svg.png in Resources */,
 				74D82184283CF081006070C4 /* LaunchScreen.storyboard in Resources */,
+				74DB3F39284F425F00959185 /* Nutri-score-D.svg.png in Resources */,
 				74D82181283CF081006070C4 /* Assets.xcassets in Resources */,
 				74D8217C283CF070006070C4 /* Main.storyboard in Resources */,
+				74DB3F37284F425F00959185 /* Nutri-score-A.svg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

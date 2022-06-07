@@ -60,6 +60,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sjn-00-N1h">
+                                <rect key="frame" x="87" y="579" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -67,6 +71,7 @@
                     <connections>
                         <outlet property="barcode" destination="o54-MY-58q" id="vCQ-Rd-qav"/>
                         <outlet property="brandNameLabel" destination="BZ5-y2-JYT" id="U7J-vH-8Ha"/>
+                        <outlet property="imageView" destination="sjn-00-N1h" id="jr7-3F-vl5"/>
                         <outlet property="productNameLabel" destination="oej-Q9-pgd" id="Rf8-7v-ZKP"/>
                         <outlet property="quantityLabel" destination="whq-5d-nsL" id="Mdl-Fw-7t1"/>
                         <outlet property="scoreLabel" destination="8eV-iJ-00a" id="Ko8-FN-UWC"/>

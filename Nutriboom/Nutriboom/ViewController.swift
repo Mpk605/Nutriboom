@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
     @IBOutlet weak var brandNameLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
@@ -114,10 +115,41 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
             let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
             
             DispatchQueue.main.async {
-                self.productNameLabel.text = (json!["product"] as? [String: Any])!["product_name_fr"] as! String + " que pour les adultes"
-                self.brandNameLabel.text = (json!["product"] as? [String: Any])!["brands"] as! String + " que pour les adultes"
-                self.quantityLabel.text = (json!["product"] as? [String: Any])!["quantity"] as! String + " que pour les adultes"
-//                self.scoreLabel.text = (json!["product"] as? [String: Any])!["nutriscore_grade"] as! String + " que pour les adultes"
+                self.productNameLabel.text = (json!["product"] as? [String: Any])!["product_name_fr"] as! String + ""
+                self.brandNameLabel.text = (json!["product"] as? [String: Any])!["brands"] as! String + ""
+                self.quantityLabel.text = (json!["product"] as? [String: Any])!["quantity"] as! String + ""
+                
+                
+                self.scoreLabel.text = (json!["product"] as? [String: Any])!["nutriscore_grade"] as! String + ""
+                
+                if(self.scoreLabel.text == "a"){
+                    let newImg: UIImage? = UIImage(named: "Nutri-score-A.svg")
+                            self.imageView.image = newImg
+
+                }
+                else if(self.scoreLabel.text == "b"){
+                    let newImg: UIImage? = UIImage(named: "Nutri-score-B.svg")
+                            self.imageView.image = newImg
+
+                }
+                else if(self.scoreLabel.text == "c"){
+                    let newImg: UIImage? = UIImage(named: "Nutri-score-C.svg")
+                            self.imageView.image = newImg
+
+                }
+                else if(self.scoreLabel.text == "d"){
+                    let newImg: UIImage? = UIImage(named: "Nutri-score-D.svg")
+                            self.imageView.image = newImg
+
+                }
+                else if(self.scoreLabel.text == "e"){
+                    let newImg: UIImage? = UIImage(named: "Nutri-score-E.svg")
+                            self.imageView.image = newImg
+
+                }
+                
+                
+                
             }
         }
         task.resume()
