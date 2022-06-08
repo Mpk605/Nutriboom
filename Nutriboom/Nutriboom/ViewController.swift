@@ -112,12 +112,21 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
                 let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                 
                 DispatchQueue.main.async {
-                    self.productNameLabel.text = (json!["product"] as? [String: Any])!["product_name_fr"] as? String
-                    self.brandNameLabel.text = (json!["product"] as? [String: Any])!["brands"] as? String
-                    self.quantityLabel.text = (json!["product"] as? [String: Any])!["quantity"] as? String
-                    self.scoreLabel.text = (json!["product"] as? [String: Any])!["nutriscore_grade"] as? String
+                    let product = (json["product"] as? [String: Any])!
                     
-                    let url = URL(string: (json!["image_url"] as? String ?? "https://images.openfoodfacts.org/images/products/376/009/431/0931/front_fr.20.400.jpg"))
+                    self.productNameLabel.text = product["product_name_fr"] as? String
+                    self.brandNameLabel.text = product["brands"] as? String
+                    self.quantityLabel.text = product["quantity"] as? String
+                    self.scoreLabel.text = product["nutriscore_grade"] as? String
+                        
+                    var urlString = product["image_url"] as? String ?? "https://fr.wiktionary.org/wiki/sheep"
+                    
+                    if (urlString == "") {
+                        urlString = "https://fr.wiktionary.org/wiki/sheep"
+                    }
+                    
+                    let url = URL(string: urlString)
+                    
                     let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
                     self.image.image = UIImage(data: data!)
                 }
