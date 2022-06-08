@@ -112,7 +112,7 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
                 let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                 
                 DispatchQueue.main.async {
-                    let product = (json["product"] as? [String: Any])!
+                    let product = (json!["product"] as? [String: Any])!
                     
                     self.productNameLabel.text = product["product_name_fr"] as? String
                     self.brandNameLabel.text = product["brands"] as? String

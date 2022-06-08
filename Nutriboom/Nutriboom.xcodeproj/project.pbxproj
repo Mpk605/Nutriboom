@@ -14,6 +14,8 @@
 		74D8217F283CF070006070C4 /* Nutriboom.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74D8217D283CF070006070C4 /* Nutriboom.xcdatamodeld */; };
 		74D82181283CF081006070C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D82180283CF081006070C4 /* Assets.xcassets */; };
 		74D82184283CF081006070C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D82182283CF081006070C4 /* LaunchScreen.storyboard */; };
+		90CBFB82284F518A00CC1763 /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CBFB81284F518A00CC1763 /* Scan.swift */; };
+		90CBFB84284F522000CC1763 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CBFB83284F522000CC1763 /* HistoryViewController.swift */; };
 		AD3E04D9283CFA870054D0D2 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E04D8283CFA870054D0D2 /* APIHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		74D82180283CF081006070C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74D82183283CF081006070C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74D82185283CF081006070C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90CBFB81284F518A00CC1763 /* Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
+		90CBFB83284F522000CC1763 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		AD3E04D8283CFA870054D0D2 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +68,8 @@
 				74D82176283CF070006070C4 /* SceneDelegate.swift */,
 				74D82178283CF070006070C4 /* ViewController.swift */,
 				74D8217A283CF070006070C4 /* Main.storyboard */,
+				90CBFB83284F522000CC1763 /* HistoryViewController.swift */,
+				90CBFB81284F518A00CC1763 /* Scan.swift */,
 				74D82180283CF081006070C4 /* Assets.xcassets */,
 				74D82182283CF081006070C4 /* LaunchScreen.storyboard */,
 				74D82185283CF081006070C4 /* Info.plist */,
@@ -149,6 +155,8 @@
 				74D82175283CF070006070C4 /* AppDelegate.swift in Sources */,
 				AD3E04D9283CFA870054D0D2 /* APIHelper.swift in Sources */,
 				74D82177283CF070006070C4 /* SceneDelegate.swift in Sources */,
+				90CBFB84284F522000CC1763 /* HistoryViewController.swift in Sources */,
+				90CBFB82284F518A00CC1763 /* Scan.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
