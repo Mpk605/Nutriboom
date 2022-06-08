@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
 
     static var scanCellIdentifier = "test"
     
@@ -26,8 +26,11 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        data.append(Scan(nom: "Banane", score: "A"))
-        data.append(Scan(nom: "Pomme", score: "B"))
+        //data.append(Scan(nom: productNameLabel.text, score: scoreLabel.text))
+        
+        
+        //data.append(Scan(nom: "Banane", score: "A"))
+        //data.append(Scan(nom: "Pomme", score: "B"))
         
         tableView.reloadData()
     }

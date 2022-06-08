@@ -8,6 +8,7 @@
 import UIKit
 import Foundation
 import AVFoundation
+import CoreData
 
 class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var productNameLabel: UILabel!
@@ -18,6 +19,10 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
     
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    
+    //var tabVal: [Scan] = []
+    var listeScan : [NSManagedObject] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -146,4 +151,53 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
     @IBAction func fetchProduct(_ sender: Any) {
         launchScan()
     }
+    
+    func saveScan() {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+                
+        let managedContext = appDelegate.persistentContainer.viewContext
+                
+        let scan : Scan = Scan.init(nom: NSEntityDescription.entity(forEntityName: "Scan", in: managedContext)!, score: managedContext)
+                 
+        scan.nom = productNameLabel.text ?? "nom"
+        
+        
+                
+        for scan in listeScan {
+            let scanObject : Scan = Scan.init(nom: NSEntityDescription.entity(forEntityName: "Scan", in: managedContext)!, score: managedContext)
+                    
+            ingredientObject.nom = scan.0
+            ingredientObject.quantite = Float(ingredient.1) ?? -1
+                    
+            recette.addToEstComposee(ingredientObject)
+            ingredientObject.addToCompose(recette)
+        }
+                
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Erreur d'enregistrement : \(error), \(error.userInfo)")
+        }
+                
+        // Nettoyage de l'interface graphique
+        txtNomRecette.text = ""
+        txtNomRecette.placeholder = ""
+        listeIngredient = []
+        tableIngredients.reloadData()
+    }
+    
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        tabVal.append(Scan(nom: productNameLabel.text ?? "nom", score: scoreLabel.text ?? "score"))
+//            if ( segue.identifier == "depart" ) {
+//                let destination = segue.destination as! HistoryViewController
+//                destination.data = tabVal
+//        }
+//    }
+    
+    
 }
