@@ -5,8 +5,6 @@
 	<key>Privacy - Camera Usage Description
 Value  :  $(PRODUCT_NAME) camera use</key>
 	<string>Scan code barres</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Je veux scanner</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

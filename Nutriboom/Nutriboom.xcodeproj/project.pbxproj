@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B74C2A62854D19A00008B73 /* Calcul.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B74C2A52854D19A00008B73 /* Calcul.swift */; };
+		5B74C2AC285554C500008B73 /* Nutri-score-D.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B74C2A7285554C500008B73 /* Nutri-score-D.svg.png */; };
+		5B74C2AD285554C500008B73 /* Nutri-score-E.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B74C2A8285554C500008B73 /* Nutri-score-E.svg.png */; };
+		5B74C2AE285554C500008B73 /* Nutri-score-C.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B74C2A9285554C500008B73 /* Nutri-score-C.svg.png */; };
+		5B74C2AF285554C500008B73 /* Nutri-score-A.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B74C2AA285554C500008B73 /* Nutri-score-A.svg.png */; };
+		5B74C2B0285554C500008B73 /* Nutri-score-B.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B74C2AB285554C500008B73 /* Nutri-score-B.svg.png */; };
 		74D82175283CF070006070C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D82174283CF070006070C4 /* AppDelegate.swift */; };
 		74D82177283CF070006070C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D82176283CF070006070C4 /* SceneDelegate.swift */; };
 		74D82179283CF070006070C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D82178283CF070006070C4 /* ViewController.swift */; };
@@ -14,14 +20,15 @@
 		74D8217F283CF070006070C4 /* Nutriboom.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74D8217D283CF070006070C4 /* Nutriboom.xcdatamodeld */; };
 		74D82181283CF081006070C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D82180283CF081006070C4 /* Assets.xcassets */; };
 		74D82184283CF081006070C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D82182283CF081006070C4 /* LaunchScreen.storyboard */; };
-		74E2127F2850F72400AABD30 /* Nutri-score-B.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E2127A2850F72400AABD30 /* Nutri-score-B.svg.png */; };
-		74E212802850F72400AABD30 /* Nutri-score-D.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E2127B2850F72400AABD30 /* Nutri-score-D.svg.png */; };
-		74E212812850F72400AABD30 /* Nutri-score-E.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E2127C2850F72400AABD30 /* Nutri-score-E.svg.png */; };
-		74E212822850F72400AABD30 /* Nutri-score-C.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E2127D2850F72400AABD30 /* Nutri-score-C.svg.png */; };
-		74E212832850F72400AABD30 /* Nutri-score-A.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E2127E2850F72400AABD30 /* Nutri-score-A.svg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B74C2A52854D19A00008B73 /* Calcul.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calcul.swift; sourceTree = "<group>"; };
+		5B74C2A7285554C500008B73 /* Nutri-score-D.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-D.svg.png"; path = "Images_nutriscore/Nutri-score-D.svg.png"; sourceTree = "<group>"; };
+		5B74C2A8285554C500008B73 /* Nutri-score-E.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-E.svg.png"; path = "Images_nutriscore/Nutri-score-E.svg.png"; sourceTree = "<group>"; };
+		5B74C2A9285554C500008B73 /* Nutri-score-C.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-C.svg.png"; path = "Images_nutriscore/Nutri-score-C.svg.png"; sourceTree = "<group>"; };
+		5B74C2AA285554C500008B73 /* Nutri-score-A.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-A.svg.png"; path = "Images_nutriscore/Nutri-score-A.svg.png"; sourceTree = "<group>"; };
+		5B74C2AB285554C500008B73 /* Nutri-score-B.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-B.svg.png"; path = "Images_nutriscore/Nutri-score-B.svg.png"; sourceTree = "<group>"; };
 		74D82171283CF070006070C4 /* Nutriboom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nutriboom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D82174283CF070006070C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D82176283CF070006070C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,11 +38,6 @@
 		74D82180283CF081006070C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74D82183283CF081006070C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74D82185283CF081006070C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74E2127A2850F72400AABD30 /* Nutri-score-B.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-B.svg.png"; path = "../../../../Downloads/Nutri-score-B.svg.png"; sourceTree = "<group>"; };
-		74E2127B2850F72400AABD30 /* Nutri-score-D.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-D.svg.png"; path = "../../../../Downloads/Nutri-score-D.svg.png"; sourceTree = "<group>"; };
-		74E2127C2850F72400AABD30 /* Nutri-score-E.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-E.svg.png"; path = "../../../../Downloads/Nutri-score-E.svg.png"; sourceTree = "<group>"; };
-		74E2127D2850F72400AABD30 /* Nutri-score-C.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-C.svg.png"; path = "../../../../Downloads/Nutri-score-C.svg.png"; sourceTree = "<group>"; };
-		74E2127E2850F72400AABD30 /* Nutri-score-A.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-A.svg.png"; path = "../../../../Downloads/Nutri-score-A.svg.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,19 +70,20 @@
 		74D82173283CF070006070C4 /* Nutriboom */ = {
 			isa = PBXGroup;
 			children = (
-				74E2127E2850F72400AABD30 /* Nutri-score-A.svg.png */,
-				74E2127A2850F72400AABD30 /* Nutri-score-B.svg.png */,
-				74E2127D2850F72400AABD30 /* Nutri-score-C.svg.png */,
-				74E2127B2850F72400AABD30 /* Nutri-score-D.svg.png */,
-				74E2127C2850F72400AABD30 /* Nutri-score-E.svg.png */,
 				74D82174283CF070006070C4 /* AppDelegate.swift */,
 				74D82176283CF070006070C4 /* SceneDelegate.swift */,
 				74D82178283CF070006070C4 /* ViewController.swift */,
+				5B74C2AA285554C500008B73 /* Nutri-score-A.svg.png */,
+				5B74C2AB285554C500008B73 /* Nutri-score-B.svg.png */,
+				5B74C2A9285554C500008B73 /* Nutri-score-C.svg.png */,
+				5B74C2A7285554C500008B73 /* Nutri-score-D.svg.png */,
+				5B74C2A8285554C500008B73 /* Nutri-score-E.svg.png */,
 				74D8217A283CF070006070C4 /* Main.storyboard */,
 				74D82180283CF081006070C4 /* Assets.xcassets */,
 				74D82182283CF081006070C4 /* LaunchScreen.storyboard */,
 				74D82185283CF081006070C4 /* Info.plist */,
 				74D8217D283CF070006070C4 /* Nutriboom.xcdatamodeld */,
+				5B74C2A52854D19A00008B73 /* Calcul.swift */,
 			);
 			path = Nutriboom;
 			sourceTree = "<group>";
@@ -143,14 +146,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74E2127F2850F72400AABD30 /* Nutri-score-B.svg.png in Resources */,
-				74E212812850F72400AABD30 /* Nutri-score-E.svg.png in Resources */,
-				74E212802850F72400AABD30 /* Nutri-score-D.svg.png in Resources */,
+				5B74C2B0285554C500008B73 /* Nutri-score-B.svg.png in Resources */,
 				74D82184283CF081006070C4 /* LaunchScreen.storyboard in Resources */,
+				5B74C2AE285554C500008B73 /* Nutri-score-C.svg.png in Resources */,
 				74D82181283CF081006070C4 /* Assets.xcassets in Resources */,
+				5B74C2AC285554C500008B73 /* Nutri-score-D.svg.png in Resources */,
+				5B74C2AD285554C500008B73 /* Nutri-score-E.svg.png in Resources */,
+				5B74C2AF285554C500008B73 /* Nutri-score-A.svg.png in Resources */,
 				74D8217C283CF070006070C4 /* Main.storyboard in Resources */,
-				74E212822850F72400AABD30 /* Nutri-score-C.svg.png in Resources */,
-				74E212832850F72400AABD30 /* Nutri-score-A.svg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +167,7 @@
 				74D82179283CF070006070C4 /* ViewController.swift in Sources */,
 				74D8217F283CF070006070C4 /* Nutriboom.xcdatamodeld in Sources */,
 				74D82175283CF070006070C4 /* AppDelegate.swift in Sources */,
+				5B74C2A62854D19A00008B73 /* Calcul.swift in Sources */,
 				74D82177283CF070006070C4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,21 +315,22 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5ZDQ9XD9JE;
+				DEVELOPMENT_TEAM = XYR44K42F7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nutriboom/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Je veux scanner";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.IUTOrsay.App;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Nutriboom.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -340,21 +345,22 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5ZDQ9XD9JE;
+				DEVELOPMENT_TEAM = XYR44K42F7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nutriboom/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Je veux scanner";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.IUTOrsay.App;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Nutriboom.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
