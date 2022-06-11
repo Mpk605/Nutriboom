@@ -9,18 +9,40 @@ import UIKit
 import Foundation
 import AVFoundation
 
-class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOutputObjectsDelegate {
-    @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var brandNameLabel: UILabel!
-    @IBOutlet weak var quantityLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var image: UIImageView!
+class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOutputObjectsDelegate {    
+    @IBOutlet weak var loadingLabel: UILabel!
+    @IBOutlet weak var loadingAnimation: UIActivityIndicatorView!
     
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
+    var productName: String = ""
+    var brandName: String = ""
+    var quantity: String = ""
+    var score: String = ""
+    var imageURL: String = ""
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DisplayScanResult" {
+            let destinationVC = segue.destination as! ScanResultViewController
+            
+            destinationVC.productName = productName
+            destinationVC.brandName = brandName
+            destinationVC.quantity = quantity
+            destinationVC.score = score
+            destinationVC.imageURL = imageURL
+        }
+    }
+    
+    func toggleLoading() {
+        loadingLabel.isHidden = !loadingLabel.isHidden
+        loadingAnimation.isHidden = !loadingAnimation.isHidden
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        toggleLoading()
     }
     
     func launchScan() {
@@ -84,6 +106,54 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
             captureSession.stopRunning()
         }
     }
+    
+    func extractFieldFromJSON(json: [String: Any], fields: [String]) -> String {
+        var newFields = fields
+        let newJSON = (json[newFields.first!] as? [String: Any])!
+        newFields.removeFirst()
+        
+        if (newFields.count > 1) {
+            return extractFieldFromJSON(json: newJSON, fields: newFields)
+        } else {
+            if let value = newJSON[newFields.first!] as? String {
+                return value as String
+            } else if let value = newJSON[newFields.first!] as? Int {
+                return String(value as Int)
+            } else {
+                return ""
+            }
+        }
+    }
+    
+    func found(code: String) {
+        captureSession.stopRunning()
+        self.view.layer.sublayers = self.view.layer.sublayers?.filter { theLayer in
+            !theLayer.isKind(of: AVCaptureVideoPreviewLayer.classForCoder())
+        }
+        
+        toggleLoading()
+        
+        let url = URL(string: "https://world.openfoodfacts.org/api/v0/product/" + code + ".json")!
+                
+        let task = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+
+            if (data != nil) {
+                let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
+                                
+                self.productName = self.extractFieldFromJSON(json: json!, fields: ["product", "product_name_fr"])
+                self.brandName = self.extractFieldFromJSON(json: json!, fields: ["product", "brands"])
+                self.quantity = self.extractFieldFromJSON(json: json!, fields: ["product", "quantity"])
+                self.score = self.extractFieldFromJSON(json: json!, fields: ["product", "nutriscore_grade"])
+                self.imageURL = self.extractFieldFromJSON(json: json!, fields: ["product", "image_url"])
+                
+                DispatchQueue.main.async {
+                    self.toggleLoading()
+                    self.performSegue(withIdentifier: "DisplayScanResult", sender: self)
+                }
+            }
+        }
+        task.resume()
+    }
 
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         // captureSession.stopRunning()
@@ -96,43 +166,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
         }
 
         dismiss(animated: true)
-    }
-
-    func found(code: String) {
-        captureSession.stopRunning()
-        self.view.layer.sublayers = self.view.layer.sublayers?.filter { theLayer in
-            !theLayer.isKind(of: AVCaptureVideoPreviewLayer.classForCoder())
-            }
-        
-        let url = URL(string: "https://world.openfoodfacts.org/api/v0/product/" + code + ".json")!
-        
-        let task = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) -> Void in
-
-            if (data != nil) {
-                let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
-                
-                DispatchQueue.main.async {
-                    let product = (json!["product"] as? [String: Any])!
-                    
-                    self.productNameLabel.text = product["product_name_fr"] as? String
-                    self.brandNameLabel.text = product["brands"] as? String
-                    self.quantityLabel.text = product["quantity"] as? String
-                    self.scoreLabel.text = product["nutriscore_grade"] as? String
-                        
-                    var urlString = product["image_url"] as? String ?? "https://fr.wiktionary.org/wiki/sheep"
-                    
-                    if (urlString == "") {
-                        urlString = "https://fr.wiktionary.org/wiki/sheep"
-                    }
-                    
-                    let url = URL(string: urlString)
-                    
-                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                    self.image.image = UIImage(data: data!)
-                }
-            }
-        }
-        task.resume()
     }
 
     override var prefersStatusBarHidden: Bool {

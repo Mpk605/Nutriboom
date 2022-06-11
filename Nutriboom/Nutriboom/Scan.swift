@@ -8,18 +8,17 @@
 import Foundation
 
 class Scan {
-     var nom : String
-     var score : String
+    var productName: String
+    var brandName: String
+    var quantity: String
+    var score: String
+    var image: String
     
-    init(nom: String, score: String){
-        self.nom = nom
+    init(productName: String, brandName: String, quantity: String, score: String, image: String){
+        self.productName = productName
+        self.brandName = brandName
+        self.quantity = quantity
         self.score = score
+        self.image = image
     }
-    
-    var scans: [Scan] = []
-    
-    func ajout(scan: Scan){
-        scans.append(scan)
-    }
-    
 }

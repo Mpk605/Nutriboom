@@ -14,6 +14,7 @@
 		74D8217F283CF070006070C4 /* Nutriboom.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74D8217D283CF070006070C4 /* Nutriboom.xcdatamodeld */; };
 		74D82181283CF081006070C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D82180283CF081006070C4 /* Assets.xcassets */; };
 		74D82184283CF081006070C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D82182283CF081006070C4 /* LaunchScreen.storyboard */; };
+		84D9F20D2854CCC300777856 /* ScanResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F20C2854CCC300777856 /* ScanResultViewController.swift */; };
 		90CBFB82284F518A00CC1763 /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CBFB81284F518A00CC1763 /* Scan.swift */; };
 		90CBFB84284F522000CC1763 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CBFB83284F522000CC1763 /* HistoryViewController.swift */; };
 		AD3E04D9283CFA870054D0D2 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E04D8283CFA870054D0D2 /* APIHelper.swift */; };
@@ -29,6 +30,7 @@
 		74D82180283CF081006070C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74D82183283CF081006070C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74D82185283CF081006070C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84D9F20C2854CCC300777856 /* ScanResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultViewController.swift; sourceTree = "<group>"; };
 		90CBFB81284F518A00CC1763 /* Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
 		90CBFB83284F522000CC1763 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		AD3E04D8283CFA870054D0D2 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				74D82185283CF081006070C4 /* Info.plist */,
 				74D8217D283CF070006070C4 /* Nutriboom.xcdatamodeld */,
 				AD3E04D8283CFA870054D0D2 /* APIHelper.swift */,
+				84D9F20C2854CCC300777856 /* ScanResultViewController.swift */,
 			);
 			path = Nutriboom;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				74D8217F283CF070006070C4 /* Nutriboom.xcdatamodeld in Sources */,
 				74D82175283CF070006070C4 /* AppDelegate.swift in Sources */,
 				AD3E04D9283CFA870054D0D2 /* APIHelper.swift in Sources */,
+				84D9F20D2854CCC300777856 /* ScanResultViewController.swift in Sources */,
 				74D82177283CF070006070C4 /* SceneDelegate.swift in Sources */,
 				90CBFB84284F522000CC1763 /* HistoryViewController.swift in Sources */,
 				90CBFB82284F518A00CC1763 /* Scan.swift in Sources */,
@@ -303,7 +307,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5ZDQ9XD9JE;
+				DEVELOPMENT_TEAM = NT9Y27K3FG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nutriboom/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -331,7 +335,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5ZDQ9XD9JE;
+				DEVELOPMENT_TEAM = NT9Y27K3FG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nutriboom/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

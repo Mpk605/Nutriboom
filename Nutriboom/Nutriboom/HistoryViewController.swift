@@ -26,15 +26,15 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        data.append(Scan(nom: "Banane", score: "A"))
-        data.append(Scan(nom: "Pomme", score: "B"))
+//        data.append(Scan(nom: "Banane", score: "A"))
+//        data.append(Scan(nom: "Pomme", score: "B"))
         
         tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HistoryViewController.scanCellIdentifier, for: indexPath)
-        cell.textLabel?.text = data[indexPath.row].nom
+//        cell.textLabel?.text = data[indexPath.row].nom
         cell.detailTextLabel?.text = data[indexPath.row].score
         return cell
     }
