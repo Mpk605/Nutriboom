@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  loginViewController.swift
 //  Nutriboom
 //
 //  Created by Yannis Amzal on 12/06/2022.
@@ -7,17 +7,26 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class loginViewController: UIViewController {
 
-    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        Utilities.styleFilledButton(signUpButton)
-        Utilities.styleHollowButton(loginButton)
+        // Hide the error label
+        errorLabel.alpha = 0
+        
+        // Style the elements
+        Utilities.styleTextField(emailTextField)
+        Utilities.styleTextField(passwordTextField)
+        Utilities.styleFilledButton(loginButton)
         
     }
     
@@ -32,4 +41,7 @@ class ViewController: UIViewController {
     }
     */
 
+    @IBAction func loginTapped(_ sender: Any) {
+    }
+    
 }

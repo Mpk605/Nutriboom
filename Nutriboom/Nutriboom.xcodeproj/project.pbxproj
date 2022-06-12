@@ -3,19 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B61A1A928566C520039547A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B61A1A828566C520039547A /* Utilities.swift */; };
+		5B61A1AB2856782D0039547A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B61A1AA2856782D0039547A /* GoogleService-Info.plist */; };
 		5B74C2A62854D19A00008B73 /* Calcul.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B74C2A52854D19A00008B73 /* Calcul.swift */; };
 		5B74C2AC285554C500008B73 /* Nutri-score-D.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B74C2A7285554C500008B73 /* Nutri-score-D.svg.png */; };
 		5B74C2AD285554C500008B73 /* Nutri-score-E.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B74C2A8285554C500008B73 /* Nutri-score-E.svg.png */; };
 		5B74C2AE285554C500008B73 /* Nutri-score-C.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B74C2A9285554C500008B73 /* Nutri-score-C.svg.png */; };
 		5B74C2AF285554C500008B73 /* Nutri-score-A.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B74C2AA285554C500008B73 /* Nutri-score-A.svg.png */; };
 		5B74C2B0285554C500008B73 /* Nutri-score-B.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B74C2AB285554C500008B73 /* Nutri-score-B.svg.png */; };
+		5B74C2B228555D0A00008B73 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B74C2B128555D0A00008B73 /* loginViewController.swift */; };
+		5B74C2B428555D2600008B73 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B74C2B328555D2600008B73 /* signUpViewController.swift */; };
+		5BE38FF22855E9B90049BAF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE38FF12855E9B90049BAF1 /* ViewController.swift */; };
+		5BE38FF62855FDA00049BAF1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE38FF52855FDA00049BAF1 /* CloudKit.framework */; };
 		74D82175283CF070006070C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D82174283CF070006070C4 /* AppDelegate.swift */; };
 		74D82177283CF070006070C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D82176283CF070006070C4 /* SceneDelegate.swift */; };
-		74D82179283CF070006070C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D82178283CF070006070C4 /* ViewController.swift */; };
 		74D8217C283CF070006070C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D8217A283CF070006070C4 /* Main.storyboard */; };
 		74D8217F283CF070006070C4 /* Nutriboom.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74D8217D283CF070006070C4 /* Nutriboom.xcdatamodeld */; };
 		74D82181283CF081006070C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D82180283CF081006070C4 /* Assets.xcassets */; };
@@ -23,16 +28,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B61A1A828566C520039547A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		5B61A1AA2856782D0039547A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B74C2A52854D19A00008B73 /* Calcul.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calcul.swift; sourceTree = "<group>"; };
 		5B74C2A7285554C500008B73 /* Nutri-score-D.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-D.svg.png"; path = "Images_nutriscore/Nutri-score-D.svg.png"; sourceTree = "<group>"; };
 		5B74C2A8285554C500008B73 /* Nutri-score-E.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-E.svg.png"; path = "Images_nutriscore/Nutri-score-E.svg.png"; sourceTree = "<group>"; };
 		5B74C2A9285554C500008B73 /* Nutri-score-C.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-C.svg.png"; path = "Images_nutriscore/Nutri-score-C.svg.png"; sourceTree = "<group>"; };
 		5B74C2AA285554C500008B73 /* Nutri-score-A.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-A.svg.png"; path = "Images_nutriscore/Nutri-score-A.svg.png"; sourceTree = "<group>"; };
 		5B74C2AB285554C500008B73 /* Nutri-score-B.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-B.svg.png"; path = "Images_nutriscore/Nutri-score-B.svg.png"; sourceTree = "<group>"; };
+		5B74C2B128555D0A00008B73 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		5B74C2B328555D2600008B73 /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
+		5BE38FF12855E9B90049BAF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5BE38FF32855FD9A0049BAF1 /* Nutriboom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nutriboom.entitlements; sourceTree = "<group>"; };
+		5BE38FF52855FDA00049BAF1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		74D82171283CF070006070C4 /* Nutriboom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nutriboom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D82174283CF070006070C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D82176283CF070006070C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		74D82178283CF070006070C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		74D8217B283CF070006070C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74D8217E283CF070006070C4 /* Nutriboom.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nutriboom.xcdatamodel; sourceTree = "<group>"; };
 		74D82180283CF081006070C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,17 +56,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BE38FF62855FDA00049BAF1 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BE38FF42855FDA00049BAF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BE38FF52855FDA00049BAF1 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		74D82168283CF070006070C4 = {
 			isa = PBXGroup;
 			children = (
 				74D82173283CF070006070C4 /* Nutriboom */,
 				74D82172283CF070006070C4 /* Products */,
+				5BE38FF42855FDA00049BAF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,20 +91,25 @@
 		74D82173283CF070006070C4 /* Nutriboom */ = {
 			isa = PBXGroup;
 			children = (
+				5BE38FF32855FD9A0049BAF1 /* Nutriboom.entitlements */,
 				74D82174283CF070006070C4 /* AppDelegate.swift */,
 				74D82176283CF070006070C4 /* SceneDelegate.swift */,
-				74D82178283CF070006070C4 /* ViewController.swift */,
 				5B74C2AA285554C500008B73 /* Nutri-score-A.svg.png */,
 				5B74C2AB285554C500008B73 /* Nutri-score-B.svg.png */,
 				5B74C2A9285554C500008B73 /* Nutri-score-C.svg.png */,
 				5B74C2A7285554C500008B73 /* Nutri-score-D.svg.png */,
 				5B74C2A8285554C500008B73 /* Nutri-score-E.svg.png */,
 				74D8217A283CF070006070C4 /* Main.storyboard */,
+				5B61A1A828566C520039547A /* Utilities.swift */,
+				5BE38FF12855E9B90049BAF1 /* ViewController.swift */,
+				5B74C2B128555D0A00008B73 /* loginViewController.swift */,
+				5B74C2B328555D2600008B73 /* signUpViewController.swift */,
 				74D82180283CF081006070C4 /* Assets.xcassets */,
 				74D82182283CF081006070C4 /* LaunchScreen.storyboard */,
 				74D82185283CF081006070C4 /* Info.plist */,
 				74D8217D283CF070006070C4 /* Nutriboom.xcdatamodeld */,
 				5B74C2A52854D19A00008B73 /* Calcul.swift */,
+				5B61A1AA2856782D0039547A /* GoogleService-Info.plist */,
 			);
 			path = Nutriboom;
 			sourceTree = "<group>";
@@ -124,7 +150,7 @@
 				};
 			};
 			buildConfigurationList = 74D8216C283CF070006070C4 /* Build configuration list for PBXProject "Nutriboom" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -148,6 +174,7 @@
 			files = (
 				5B74C2B0285554C500008B73 /* Nutri-score-B.svg.png in Resources */,
 				74D82184283CF081006070C4 /* LaunchScreen.storyboard in Resources */,
+				5B61A1AB2856782D0039547A /* GoogleService-Info.plist in Resources */,
 				5B74C2AE285554C500008B73 /* Nutri-score-C.svg.png in Resources */,
 				74D82181283CF081006070C4 /* Assets.xcassets in Resources */,
 				5B74C2AC285554C500008B73 /* Nutri-score-D.svg.png in Resources */,
@@ -164,10 +191,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74D82179283CF070006070C4 /* ViewController.swift in Sources */,
+				5B74C2B428555D2600008B73 /* signUpViewController.swift in Sources */,
 				74D8217F283CF070006070C4 /* Nutriboom.xcdatamodeld in Sources */,
+				5B74C2B228555D0A00008B73 /* loginViewController.swift in Sources */,
 				74D82175283CF070006070C4 /* AppDelegate.swift in Sources */,
+				5BE38FF22855E9B90049BAF1 /* ViewController.swift in Sources */,
 				5B74C2A62854D19A00008B73 /* Calcul.swift in Sources */,
+				5B61A1A928566C520039547A /* Utilities.swift in Sources */,
 				74D82177283CF070006070C4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,7 +274,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -298,7 +328,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -313,6 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nutriboom/Nutriboom.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XYR44K42F7;
@@ -343,6 +374,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nutriboom/Nutriboom.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XYR44K42F7;

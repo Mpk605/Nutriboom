@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>338834551549-p1g8vsqr9qbde4blgci7l0tjk05ha7ht.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.338834551549-p1g8vsqr9qbde4blgci7l0tjk05ha7ht</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCM9-Nc7P8qdxc2SPNcdz4Nb1SaeB4eQWQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>338834551549</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.Nutriboom.App</string>
+	<key>PROJECT_ID</key>
+	<string>nutriboom-66711</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nutriboom-66711.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:338834551549:ios:ab92e450224d3fd7200494</string>
+</dict>
+</plist>
