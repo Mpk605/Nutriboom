@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		5B61A1A928566C520039547A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B61A1A828566C520039547A /* Utilities.swift */; };
 		5B61A1AB2856782D0039547A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B61A1AA2856782D0039547A /* GoogleService-Info.plist */; };
+		5B61A1AE285682EA0039547A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5B61A1AD285682EA0039547A /* FirebaseAnalytics */; };
+		5B61A1B0285682EA0039547A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5B61A1AF285682EA0039547A /* FirebaseAuth */; };
+		5B61A1B2285682EA0039547A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5B61A1B1285682EA0039547A /* FirebaseDatabase */; };
+		5B61A1B4285682EA0039547A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5B61A1B3285682EA0039547A /* FirebaseFirestore */; };
+		5B61A1B628568B430039547A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B61A1B528568B430039547A /* Constants.swift */; };
+		5B61A1B828568DBC0039547A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B61A1B728568DBC0039547A /* HomeViewController.swift */; };
 		5B74C2A62854D19A00008B73 /* Calcul.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B74C2A52854D19A00008B73 /* Calcul.swift */; };
 		5B74C2AC285554C500008B73 /* Nutri-score-D.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B74C2A7285554C500008B73 /* Nutri-score-D.svg.png */; };
 		5B74C2AD285554C500008B73 /* Nutri-score-E.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B74C2A8285554C500008B73 /* Nutri-score-E.svg.png */; };
@@ -30,6 +36,8 @@
 /* Begin PBXFileReference section */
 		5B61A1A828566C520039547A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		5B61A1AA2856782D0039547A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5B61A1B528568B430039547A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5B61A1B728568DBC0039547A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5B74C2A52854D19A00008B73 /* Calcul.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calcul.swift; sourceTree = "<group>"; };
 		5B74C2A7285554C500008B73 /* Nutri-score-D.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-D.svg.png"; path = "Images_nutriscore/Nutri-score-D.svg.png"; sourceTree = "<group>"; };
 		5B74C2A8285554C500008B73 /* Nutri-score-E.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nutri-score-E.svg.png"; path = "Images_nutriscore/Nutri-score-E.svg.png"; sourceTree = "<group>"; };
@@ -56,6 +64,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B61A1AE285682EA0039547A /* FirebaseAnalytics in Frameworks */,
+				5B61A1B0285682EA0039547A /* FirebaseAuth in Frameworks */,
+				5B61A1B2285682EA0039547A /* FirebaseDatabase in Frameworks */,
+				5B61A1B4285682EA0039547A /* FirebaseFirestore in Frameworks */,
 				5BE38FF62855FDA00049BAF1 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,7 +115,9 @@
 				5B61A1A828566C520039547A /* Utilities.swift */,
 				5BE38FF12855E9B90049BAF1 /* ViewController.swift */,
 				5B74C2B128555D0A00008B73 /* loginViewController.swift */,
+				5B61A1B728568DBC0039547A /* HomeViewController.swift */,
 				5B74C2B328555D2600008B73 /* signUpViewController.swift */,
+				5B61A1B528568B430039547A /* Constants.swift */,
 				74D82180283CF081006070C4 /* Assets.xcassets */,
 				74D82182283CF081006070C4 /* LaunchScreen.storyboard */,
 				74D82185283CF081006070C4 /* Info.plist */,
@@ -130,6 +144,12 @@
 			dependencies = (
 			);
 			name = Nutriboom;
+			packageProductDependencies = (
+				5B61A1AD285682EA0039547A /* FirebaseAnalytics */,
+				5B61A1AF285682EA0039547A /* FirebaseAuth */,
+				5B61A1B1285682EA0039547A /* FirebaseDatabase */,
+				5B61A1B3285682EA0039547A /* FirebaseFirestore */,
+			);
 			productName = Nutriboom;
 			productReference = 74D82171283CF070006070C4 /* Nutriboom.app */;
 			productType = "com.apple.product-type.application";
@@ -158,6 +178,9 @@
 				Base,
 			);
 			mainGroup = 74D82168283CF070006070C4;
+			packageReferences = (
+				5B61A1AC285682EA0039547A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 74D82172283CF070006070C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -196,9 +219,11 @@
 				5B74C2B228555D0A00008B73 /* loginViewController.swift in Sources */,
 				74D82175283CF070006070C4 /* AppDelegate.swift in Sources */,
 				5BE38FF22855E9B90049BAF1 /* ViewController.swift in Sources */,
+				5B61A1B828568DBC0039547A /* HomeViewController.swift in Sources */,
 				5B74C2A62854D19A00008B73 /* Calcul.swift in Sources */,
 				5B61A1A928566C520039547A /* Utilities.swift in Sources */,
 				74D82177283CF070006070C4 /* SceneDelegate.swift in Sources */,
+				5B61A1B628568B430039547A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +447,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5B61A1AC285682EA0039547A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5B61A1AD285682EA0039547A /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B61A1AC285682EA0039547A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		5B61A1AF285682EA0039547A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B61A1AC285682EA0039547A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5B61A1B1285682EA0039547A /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B61A1AC285682EA0039547A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		5B61A1B3285682EA0039547A /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B61A1AC285682EA0039547A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		74D8217D283CF070006070C4 /* Nutriboom.xcdatamodeld */ = {

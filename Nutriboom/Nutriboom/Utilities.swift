@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//Sert a modifier l'apparence des boutons et champs de textes
 class Utilities {
     
     static func styleTextField(_ textfield:UITextField) {
