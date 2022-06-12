@@ -9,40 +9,44 @@ import UIKit
 import Foundation
 import AVFoundation
 
-class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOutputObjectsDelegate {    
-    @IBOutlet weak var loadingLabel: UILabel!
-    @IBOutlet weak var loadingAnimation: UIActivityIndicatorView!
-    
+class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
     var productName: String = ""
     var brandName: String = ""
-    var quantity: String = ""
     var score: String = ""
     var imageURL: String = ""
+    var calories: String = ""
+    var carbs: String = ""
+    var sugar: String = ""
+    var fibers: String = ""
+    var fat: String = ""
+    var saturatedFat: String = ""
+    var proteins: String = ""
+    var sodium: String = ""
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DisplayScanResult" {
             let destinationVC = segue.destination as! ScanResultViewController
-            
+
             destinationVC.productName = productName
             destinationVC.brandName = brandName
-            destinationVC.quantity = quantity
             destinationVC.score = score
             destinationVC.imageURL = imageURL
+            destinationVC.calories = calories
+            destinationVC.carbs = carbs
+            destinationVC.sugar = sugar
+            destinationVC.fibers = fibers
+            destinationVC.fat = fat
+            destinationVC.saturatedFat = saturatedFat
+            destinationVC.proteins = proteins
+            destinationVC.sodium = sodium
         }
-    }
-    
-    func toggleLoading() {
-        loadingLabel.isHidden = !loadingLabel.isHidden
-        loadingAnimation.isHidden = !loadingAnimation.isHidden
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        toggleLoading()
     }
     
     func launchScan() {
@@ -119,6 +123,8 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
                 return value as String
             } else if let value = newJSON[newFields.first!] as? Int {
                 return String(value as Int)
+            } else if let value = newJSON[newFields.first!] as? Double {
+                return String(value as Double)
             } else {
                 return ""
             }
@@ -131,8 +137,6 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
             !theLayer.isKind(of: AVCaptureVideoPreviewLayer.classForCoder())
         }
         
-        toggleLoading()
-        
         let url = URL(string: "https://world.openfoodfacts.org/api/v0/product/" + code + ".json")!
                 
         let task = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) -> Void in
@@ -142,12 +146,20 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
                                 
                 self.productName = self.extractFieldFromJSON(json: json!, fields: ["product", "product_name_fr"])
                 self.brandName = self.extractFieldFromJSON(json: json!, fields: ["product", "brands"])
-                self.quantity = self.extractFieldFromJSON(json: json!, fields: ["product", "quantity"])
                 self.score = self.extractFieldFromJSON(json: json!, fields: ["product", "nutriscore_grade"])
                 self.imageURL = self.extractFieldFromJSON(json: json!, fields: ["product", "image_url"])
                 
+                // Nutritional facts
+                self.calories = self.extractFieldFromJSON(json: json!, fields: ["product", "nutriments", "energy-kcal_100g"])
+                self.carbs = self.extractFieldFromJSON(json: json!, fields: ["product", "nutriments", "carbohydrates_100g"])
+                self.sugar = self.extractFieldFromJSON(json: json!, fields: ["product", "nutriments", "sugars_100g"])
+                self.fibers = self.extractFieldFromJSON(json: json!, fields: ["product", "nutriments", "fiber_100g"])
+                self.fat = self.extractFieldFromJSON(json: json!, fields: ["product", "nutriments", "fat_100g"])
+                self.saturatedFat = self.extractFieldFromJSON(json: json!, fields: ["product", "nutriments", "saturated-fat_100g"])
+                self.proteins = self.extractFieldFromJSON(json: json!, fields: ["product", "nutriments", "proteins_100g"])
+                self.sodium = self.extractFieldFromJSON(json: json!, fields: ["product", "nutriments", "sodium_100g"])
+                
                 DispatchQueue.main.async {
-                    self.toggleLoading()
                     self.performSegue(withIdentifier: "DisplayScanResult", sender: self)
                 }
             }
