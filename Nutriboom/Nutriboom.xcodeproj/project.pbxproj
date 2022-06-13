@@ -17,6 +17,8 @@
 		84B0114A28566BF900294457 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0114928566BF900294457 /* OnboardingViewController.swift */; };
 		84B0114C2856725100294457 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0114B2856725100294457 /* Slide.swift */; };
 		84B0114E2856727300294457 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B0114D2856727300294457 /* Slide.xib */; };
+		84B0115028568FE200294457 /* Calcul.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0114F28568FE200294457 /* Calcul.swift */; };
+		84B011522856BE4500294457 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B011512856BE4500294457 /* PreferencesViewController.swift */; };
 		84D9F20D2854CCC300777856 /* ScanResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F20C2854CCC300777856 /* ScanResultViewController.swift */; };
 		90CBFB82284F518A00CC1763 /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CBFB81284F518A00CC1763 /* Scan.swift */; };
 		90CBFB84284F522000CC1763 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CBFB83284F522000CC1763 /* HistoryViewController.swift */; };
@@ -36,6 +38,8 @@
 		84B0114928566BF900294457 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		84B0114B2856725100294457 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		84B0114D2856727300294457 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		84B0114F28568FE200294457 /* Calcul.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calcul.swift; sourceTree = "<group>"; };
+		84B011512856BE4500294457 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		84D9F20C2854CCC300777856 /* ScanResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultViewController.swift; sourceTree = "<group>"; };
 		90CBFB81284F518A00CC1763 /* Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
 		90CBFB83284F522000CC1763 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 		74D82173283CF070006070C4 /* Nutriboom */ = {
 			isa = PBXGroup;
 			children = (
+				84B0114F28568FE200294457 /* Calcul.swift */,
 				74D82174283CF070006070C4 /* AppDelegate.swift */,
 				74D82176283CF070006070C4 /* SceneDelegate.swift */,
 				74D82178283CF070006070C4 /* ViewController.swift */,
@@ -87,6 +92,7 @@
 				84B0114928566BF900294457 /* OnboardingViewController.swift */,
 				84B0114B2856725100294457 /* Slide.swift */,
 				84B0114D2856727300294457 /* Slide.xib */,
+				84B011512856BE4500294457 /* PreferencesViewController.swift */,
 			);
 			path = Nutriboom;
 			sourceTree = "<group>";
@@ -164,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74D82179283CF070006070C4 /* ViewController.swift in Sources */,
+				84B0115028568FE200294457 /* Calcul.swift in Sources */,
 				74D8217F283CF070006070C4 /* Nutriboom.xcdatamodeld in Sources */,
 				74D82175283CF070006070C4 /* AppDelegate.swift in Sources */,
 				AD3E04D9283CFA870054D0D2 /* APIHelper.swift in Sources */,
@@ -173,6 +180,7 @@
 				84B0114A28566BF900294457 /* OnboardingViewController.swift in Sources */,
 				90CBFB82284F518A00CC1763 /* Scan.swift in Sources */,
 				84B0114C2856725100294457 /* Slide.swift in Sources */,
+				84B011522856BE4500294457 /* PreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

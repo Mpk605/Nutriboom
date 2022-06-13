@@ -56,6 +56,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="sAt-By-m2o">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Boop"/>
+                                <connections>
+                                    <segue destination="Ht5-LO-PfF" kind="popoverPresentation" identifier="ShowProduct" popoverAnchorView="sAt-By-m2o" id="iC4-xz-6Cc">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="249-e9-Tx6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -86,7 +97,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUt-fp-u6A">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUt-fp-u6A">
                                 <rect key="frame" x="178" y="706" width="58" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Boop"/>
@@ -471,6 +482,7 @@
                         <outlet property="fiberProgress" destination="ubu-DO-btO" id="POU-4U-Pka"/>
                         <outlet property="fibersLabel" destination="avU-mJ-fXn" id="hxx-in-L3Y"/>
                         <outlet property="imageView" destination="f50-fl-4kI" id="Gzy-by-JFy"/>
+                        <outlet property="nutriscoreImage" destination="ACq-6w-PU7" id="bMp-H7-cug"/>
                         <outlet property="productNameLabel" destination="v3n-xF-iL7" id="dqQ-jE-5Ko"/>
                         <outlet property="proteinsLabel" destination="0GB-Of-MdK" id="I2P-fM-HrD"/>
                         <outlet property="proteinsProgress" destination="wCJ-pU-4U0" id="9vw-cH-hDJ"/>
@@ -484,23 +496,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQn-iN-YST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1840.5797101449277" y="91.741071428571431"/>
+            <point key="canvasLocation" x="1933" y="92"/>
         </scene>
         <!--Preferences-->
         <scene sceneID="kxs-al-PeB">
             <objects>
-                <viewController id="MaA-03-p0y" sceneMemberID="viewController">
+                <viewController id="MaA-03-p0y" customClass="PreferencesViewController" customModule="Nutriboom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rJS-rZ-IhD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liste des préférences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWD-BV-rHU">
+                                <rect key="frame" x="97" y="84" width="220" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q1w-Sk-Wk3">
+                                <rect key="frame" x="96" y="677" width="223" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lA9-xI-X4S">
+                                <rect key="frame" x="114" y="719" width="186" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add tag"/>
+                                <connections>
+                                    <action selector="addTag:" destination="MaA-03-p0y" eventType="touchUpInside" id="Fwo-bi-cHu"/>
+                                </connections>
+                            </button>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="P7R-BF-5V4">
+                                <rect key="frame" x="0.0" y="130" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="jM0-j5-GGT"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5g0-9S-eEd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5g0-9S-eEd" firstAttribute="bottom" secondItem="lA9-xI-X4S" secondAttribute="bottom" constant="63" id="71P-dG-muG"/>
+                            <constraint firstItem="q1w-Sk-Wk3" firstAttribute="centerX" secondItem="lA9-xI-X4S" secondAttribute="centerX" id="B7Q-Fj-JTU"/>
+                            <constraint firstItem="lA9-xI-X4S" firstAttribute="top" secondItem="q1w-Sk-Wk3" secondAttribute="bottom" constant="8" id="FZ5-2Y-5yb"/>
+                            <constraint firstItem="P7R-BF-5V4" firstAttribute="centerX" secondItem="yWD-BV-rHU" secondAttribute="centerX" id="FtK-tS-xWj"/>
+                            <constraint firstItem="q1w-Sk-Wk3" firstAttribute="leading" secondItem="5g0-9S-eEd" secondAttribute="leading" constant="96" id="GWt-zU-XsE"/>
+                            <constraint firstItem="yWD-BV-rHU" firstAttribute="top" secondItem="5g0-9S-eEd" secondAttribute="top" constant="40" id="Jab-8l-4sp"/>
+                            <constraint firstItem="q1w-Sk-Wk3" firstAttribute="centerX" secondItem="yWD-BV-rHU" secondAttribute="centerX" id="KcE-vQ-Yeh"/>
+                            <constraint firstItem="yWD-BV-rHU" firstAttribute="leading" secondItem="5g0-9S-eEd" secondAttribute="leading" constant="97" id="W8q-QX-8yV"/>
+                            <constraint firstItem="lA9-xI-X4S" firstAttribute="leading" secondItem="5g0-9S-eEd" secondAttribute="leading" constant="114" id="WJq-jh-LRo"/>
+                            <constraint firstItem="P7R-BF-5V4" firstAttribute="leading" secondItem="5g0-9S-eEd" secondAttribute="leading" id="dKe-mf-2X3"/>
+                            <constraint firstItem="P7R-BF-5V4" firstAttribute="top" secondItem="yWD-BV-rHU" secondAttribute="bottom" constant="17" id="jEx-ln-gYq"/>
+                            <constraint firstItem="5g0-9S-eEd" firstAttribute="trailing" secondItem="yWD-BV-rHU" secondAttribute="trailing" constant="97" id="prB-pi-ibT"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Preferences" image="wand.and.rays" catalog="system" id="uPG-cs-LYp"/>
+                    <connections>
+                        <outlet property="txtInput" destination="q1w-Sk-Wk3" id="o3O-sW-IMo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LgN-gB-syQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="772"/>
+            <point key="canvasLocation" x="1039.1304347826087" y="771.42857142857144"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="WHo-x9-XNv">
@@ -580,6 +637,9 @@
             <point key="canvasLocation" x="131.8840579710145" y="92.410714285714278"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iC4-xz-6Cc"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bobby" width="325" height="370"/>
         <image name="camera.viewfinder" catalog="system" width="128" height="115"/>

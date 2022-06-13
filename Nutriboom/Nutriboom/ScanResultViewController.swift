@@ -30,6 +30,8 @@ class ScanResultViewController: UIViewController {
     @IBOutlet weak var proteinsProgress: UIProgressView!
     @IBOutlet weak var sodiumProgress: UIProgressView!
     
+    @IBOutlet weak var nutriscoreImage: UIImageView!
+    
     var productName: String = ""
     var brandName: String = ""
     var score: String = ""
@@ -75,6 +77,25 @@ class ScanResultViewController: UIViewController {
         proteinsProgress.progress = Float(proteins)! / 100
         sodiumProgress.progress = Float(sodium)! / 100
         
+        if (score == "a") {
+            let newImg: UIImage? = UIImage(named: "Nutri-score-A.png")
+            self.nutriscoreImage.image = newImg
+        } else if(score == "b"){
+            let newImg: UIImage? = UIImage(named: "Nutri-score-B.png")
+            self.nutriscoreImage.image = newImg
+        } else if(score == "c"){
+            let newImg: UIImage? = UIImage(named: "Nutri-score-C.png")
+            self.nutriscoreImage.image = newImg
+        } else if(score == "d"){
+            let newImg: UIImage? = UIImage(named: "Nutri-score-D.png")
+            self.nutriscoreImage.image = newImg
+        } else if(score == "e"){
+            let newImg: UIImage? = UIImage(named: "Nutri-score-E.png")
+            self.nutriscoreImage.image = newImg
+        } else{
+            let newImg: UIImage? = UIImage(named: "Nutri-score-F.png")
+            self.nutriscoreImage.image = newImg
+        }
         
         var urlString = imageURL
 

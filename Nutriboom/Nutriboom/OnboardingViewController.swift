@@ -57,6 +57,8 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(UserDefaults.standard.bool(forKey: "notFirstTime"))
+        
         scollView.delegate = self
         
         slides = createSlides()
@@ -68,8 +70,20 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
         view.bringSubviewToFront(showMainAppButton)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if UserDefaults.standard.bool(forKey: "notFirstTime") {
+            let mainStoryboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let nav = mainStoryboard.instantiateViewController(withIdentifier: "MainView") as! UITabBarController
+            let appDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+            
+            appDelegate.window?.rootViewController = nav
+        }
+    }
     
     @IBAction func showMainApp(_ sender: Any) {
+        UserDefaults.standard.set(true, forKey: "notFirstTime")
+        
         let mainStoryboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let nav = mainStoryboard.instantiateViewController(withIdentifier: "MainView") as! UITabBarController
         let appDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate

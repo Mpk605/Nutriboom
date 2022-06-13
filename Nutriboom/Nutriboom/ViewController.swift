@@ -8,6 +8,7 @@
 import UIKit
 import Foundation
 import AVFoundation
+import CoreData
 
 class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
@@ -126,9 +127,61 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
             } else if let value = newJSON[newFields.first!] as? Double {
                 return String(value as Double)
             } else {
-                return ""
+                return "nil"
             }
         }
+    }
+    
+    func computeNutriscore(json: [String: Any]) -> String {
+        var nutriscore = "Désolé, nous ne connaissons pas le nutriscore de ce produit"
+        
+        //Ici on devrait calculer le nutriscore
+        
+        /* Pour afficher une erreur au lieu de le calculer
+         nutriscore = (json!["product"] as? [String: AnyObject])!["nutrition_score_debug"] as! String + ""
+         if(nutriscore == "no score when the product does not have a category"){
+         nutriscore = "Désolé, la catégorie de ce produit n'est pas connue. Impossible de calculer le nutriscore"
+         }
+         */
+        
+        
+        //On attribue des points en fonction des valeurs nutritionnelles du produit scanné
+        let kcal = self.extractFieldFromJSON(json: json, fields: ["product", "nutriments", "energy-kcal_100g"])
+        let pt_energie = pt_energie(number: Int(kcal) ?? -1)
+        
+        let sucres = self.extractFieldFromJSON(json: json, fields: ["product", "nutriments", "sugars_100g"])
+        let pt_sucres = pt_sucres(number: Double(sucres) ?? 0)
+        
+        let graisses = self.extractFieldFromJSON(json: json, fields: ["product", "nutriments", "saturated-fat_100g"])
+        let pt_graisses_sat = pt_graisses_sat(number: Double(graisses) ?? 0)
+        
+        let sels = self.extractFieldFromJSON(json: json, fields: ["product", "nutriments", "salt_100g"])
+        let pt_sodium = pt_sodium(number: Double(sels) ?? 0)
+        
+        
+        let fruits_legumes = self.extractFieldFromJSON(json: json, fields: ["product", "nutriments", "fruits-vegetables-nuts-estimate-from-ingredients_100g"])
+        let pt_fruits_legumes = pt_fruits_legumes(number: Double(fruits_legumes) ?? 0)
+        
+        let fibres = self.extractFieldFromJSON(json: json, fields: ["product", "nutriments", "fiber_100g"])
+        let pt_fibres = pt_fibres(number: Double(fibres) ?? 0)
+        
+        let proteines = self.extractFieldFromJSON(json: json, fields: ["product", "nutriments", "proteins_100g"])
+        let pt_proteines = pt_proteines(number: Double(proteines) ?? 0)
+        
+        
+        let PointsN = pt_sodium + pt_graisses_sat + pt_sucres + pt_energie
+        let PointsP = pt_fruits_legumes + pt_fibres + pt_proteines
+        
+        //Calcul du score et de la lettre correspondante
+        let score = Nutriboom.score(PointsP: PointsP, PointsN: PointsN, pt_fruits_legumes: pt_fruits_legumes, pt_fibres: pt_fibres)
+        nutriscore = lettre(score_final: score)
+        
+        //Si on les calories ne sont pas renseignées dans openfoodfacts
+        if(pt_energie == -1){
+            nutriscore = "Données nutritionelles inconnues"
+        }
+        
+        return nutriscore
     }
     
     func found(code: String) {
@@ -144,9 +197,14 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
             if (data != nil) {
                 let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                                 
-                self.productName = self.extractFieldFromJSON(json: json!, fields: ["product", "product_name_fr"])
+                self.productName = self.extractFieldFromJSON(json: json!, fields: ["product", "product_name"])
                 self.brandName = self.extractFieldFromJSON(json: json!, fields: ["product", "brands"])
                 self.score = self.extractFieldFromJSON(json: json!, fields: ["product", "nutriscore_grade"])
+                
+                if self.score == "nil" {
+                    self.score = self.computeNutriscore(json: json!)
+                }
+                    
                 self.imageURL = self.extractFieldFromJSON(json: json!, fields: ["product", "image_url"])
                 
                 // Nutritional facts
@@ -160,6 +218,33 @@ class ViewController: UIViewController, UITextFieldDelegate, AVCaptureMetadataOu
                 self.sodium = self.extractFieldFromJSON(json: json!, fields: ["product", "nutriments", "sodium_100g"])
                 
                 DispatchQueue.main.async {
+                    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                        return
+                    }
+                    
+                    let managedContext = appDelegate.persistentContainer.viewContext
+                    
+                    let product: Product = Product.init(entity: NSEntityDescription.entity(forEntityName: "Product", in: managedContext)!, insertInto: managedContext)
+                    
+                    product.productName = self.productName
+                    product.brandName = self.brandName
+                    product.nutriscore = self.score
+                    product.imageURL = self.imageURL
+                    product.calories = self.calories
+                    product.carbs = self.carbs
+                    product.sugars = self.sugar
+                    product.fibers = self.fibers
+                    product.fat = self.fat
+                    product.saturatedFat = self.saturatedFat
+                    product.proteins = self.proteins
+                    product.sodium = self.sodium
+                    
+                    do {
+                        try managedContext.save()
+                    } catch let error as NSError {
+                        print("Erreur d'enregistrement : \(error), \(error.userInfo)")
+                    }
+                    
                     self.performSegue(withIdentifier: "DisplayScanResult", sender: self)
                 }
             }
