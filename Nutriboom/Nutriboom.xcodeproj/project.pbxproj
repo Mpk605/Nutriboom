@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		74D82175283CF070006070C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D82174283CF070006070C4 /* AppDelegate.swift */; };
+		74D82177283CF070006070C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D82176283CF070006070C4 /* SceneDelegate.swift */; };
+		74D82179283CF070006070C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D82178283CF070006070C4 /* ViewController.swift */; };
+		74D8217C283CF070006070C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D8217A283CF070006070C4 /* Main.storyboard */; };
+		74D8217F283CF070006070C4 /* Nutriboom.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74D8217D283CF070006070C4 /* Nutriboom.xcdatamodeld */; };
+		74D82181283CF081006070C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D82180283CF081006070C4 /* Assets.xcassets */; };
+		74D82184283CF081006070C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D82182283CF081006070C4 /* LaunchScreen.storyboard */; };
+		84B0114A28566BF900294457 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0114928566BF900294457 /* OnboardingViewController.swift */; };
+		84B0114C2856725100294457 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0114B2856725100294457 /* Slide.swift */; };
+		84B0114E2856727300294457 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B0114D2856727300294457 /* Slide.xib */; };
+		84B0115028568FE200294457 /* Calcul.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0114F28568FE200294457 /* Calcul.swift */; };
+		84B011522856BE4500294457 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B011512856BE4500294457 /* PreferencesViewController.swift */; };
+		84D9F20D2854CCC300777856 /* ScanResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F20C2854CCC300777856 /* ScanResultViewController.swift */; };
+		90CBFB82284F518A00CC1763 /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CBFB81284F518A00CC1763 /* Scan.swift */; };
+		90CBFB84284F522000CC1763 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CBFB83284F522000CC1763 /* HistoryViewController.swift */; };
+		AD3E04D9283CFA870054D0D2 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E04D8283CFA870054D0D2 /* APIHelper.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		74D82171283CF070006070C4 /* Nutriboom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nutriboom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74D82174283CF070006070C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		74D82176283CF070006070C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		74D82178283CF070006070C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		74D8217B283CF070006070C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		74D8217E283CF070006070C4 /* Nutriboom.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nutriboom.xcdatamodel; sourceTree = "<group>"; };
+		74D82180283CF081006070C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		74D82183283CF081006070C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		74D82185283CF081006070C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B0114928566BF900294457 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		84B0114B2856725100294457 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		84B0114D2856727300294457 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		84B0114F28568FE200294457 /* Calcul.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calcul.swift; sourceTree = "<group>"; };
+		84B011512856BE4500294457 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		84D9F20C2854CCC300777856 /* ScanResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultViewController.swift; sourceTree = "<group>"; };
+		90CBFB81284F518A00CC1763 /* Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
+		90CBFB83284F522000CC1763 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		AD3E04D8283CFA870054D0D2 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		74D8216E283CF070006070C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		74D82168283CF070006070C4 = {
+			isa = PBXGroup;
+			children = (
+				74D82173283CF070006070C4 /* Nutriboom */,
+				74D82172283CF070006070C4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		74D82172283CF070006070C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74D82171283CF070006070C4 /* Nutriboom.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74D82173283CF070006070C4 /* Nutriboom */ = {
+			isa = PBXGroup;
+			children = (
+				84B0114F28568FE200294457 /* Calcul.swift */,
+				74D82174283CF070006070C4 /* AppDelegate.swift */,
+				74D82176283CF070006070C4 /* SceneDelegate.swift */,
+				74D82178283CF070006070C4 /* ViewController.swift */,
+				74D8217A283CF070006070C4 /* Main.storyboard */,
+				90CBFB83284F522000CC1763 /* HistoryViewController.swift */,
+				90CBFB81284F518A00CC1763 /* Scan.swift */,
+				74D82180283CF081006070C4 /* Assets.xcassets */,
+				74D82182283CF081006070C4 /* LaunchScreen.storyboard */,
+				74D82185283CF081006070C4 /* Info.plist */,
+				74D8217D283CF070006070C4 /* Nutriboom.xcdatamodeld */,
+				AD3E04D8283CFA870054D0D2 /* APIHelper.swift */,
+				84D9F20C2854CCC300777856 /* ScanResultViewController.swift */,
+				84B0114928566BF900294457 /* OnboardingViewController.swift */,
+				84B0114B2856725100294457 /* Slide.swift */,
+				84B0114D2856727300294457 /* Slide.xib */,
+				84B011512856BE4500294457 /* PreferencesViewController.swift */,
+			);
+			path = Nutriboom;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		74D82170283CF070006070C4 /* Nutriboom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74D82188283CF081006070C4 /* Build configuration list for PBXNativeTarget "Nutriboom" */;
+			buildPhases = (
+				74D8216D283CF070006070C4 /* Sources */,
+				74D8216E283CF070006070C4 /* Frameworks */,
+				74D8216F283CF070006070C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nutriboom;
+			productName = Nutriboom;
+			productReference = 74D82171283CF070006070C4 /* Nutriboom.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		74D82169283CF070006070C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					74D82170283CF070006070C4 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 74D8216C283CF070006070C4 /* Build configuration list for PBXProject "Nutriboom" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 74D82168283CF070006070C4;
+			productRefGroup = 74D82172283CF070006070C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				74D82170283CF070006070C4 /* Nutriboom */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		74D8216F283CF070006070C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74D82184283CF081006070C4 /* LaunchScreen.storyboard in Resources */,
+				74D82181283CF081006070C4 /* Assets.xcassets in Resources */,
+				74D8217C283CF070006070C4 /* Main.storyboard in Resources */,
+				84B0114E2856727300294457 /* Slide.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74D8216D283CF070006070C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74D82179283CF070006070C4 /* ViewController.swift in Sources */,
+				84B0115028568FE200294457 /* Calcul.swift in Sources */,
+				74D8217F283CF070006070C4 /* Nutriboom.xcdatamodeld in Sources */,
+				74D82175283CF070006070C4 /* AppDelegate.swift in Sources */,
+				AD3E04D9283CFA870054D0D2 /* APIHelper.swift in Sources */,
+				84D9F20D2854CCC300777856 /* ScanResultViewController.swift in Sources */,
+				74D82177283CF070006070C4 /* SceneDelegate.swift in Sources */,
+				90CBFB84284F522000CC1763 /* HistoryViewController.swift in Sources */,
+				84B0114A28566BF900294457 /* OnboardingViewController.swift in Sources */,
+				90CBFB82284F518A00CC1763 /* Scan.swift in Sources */,
+				84B0114C2856725100294457 /* Slide.swift in Sources */,
+				84B011522856BE4500294457 /* PreferencesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		74D8217A283CF070006070C4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74D8217B283CF070006070C4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		74D82182283CF081006070C4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74D82183283CF081006070C4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		74D82186283CF081006070C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		74D82187283CF081006070C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		74D82189283CF081006070C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NT9Y27K3FG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nutriboom/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Je veux scanner";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.malautru.Nutriboom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		74D8218A283CF081006070C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NT9Y27K3FG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nutriboom/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Je veux scanner";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.malautru.Nutriboom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74D8216C283CF070006070C4 /* Build configuration list for PBXProject "Nutriboom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74D82186283CF081006070C4 /* Debug */,
+				74D82187283CF081006070C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74D82188283CF081006070C4 /* Build configuration list for PBXNativeTarget "Nutriboom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74D82189283CF081006070C4 /* Debug */,
+				74D8218A283CF081006070C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		74D8217D283CF070006070C4 /* Nutriboom.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				74D8217E283CF070006070C4 /* Nutriboom.xcdatamodel */,
+			);
+			currentVersion = 74D8217E283CF070006070C4 /* Nutriboom.xcdatamodel */;
+			path = Nutriboom.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 74D82169283CF070006070C4 /* Project object */;
+}
